@@ -1,0 +1,1023 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    overflow: hidden;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Opening Section */
+.opening-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/bk5.jpg');
+    /* background: linear-gradient(rgba(230, 144, 144, 0.822), rgba(224, 142, 227, 0.5)), url('./images/profilePic.png'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: linear-gradient(45deg, #ea0fc9, #8efdff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.avatar boy-avatar{
+    width: 100px;
+    height: 100px;
+}
+
+/* Wishes Section */
+.wishes-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    position: relative;
+}
+
+.wishes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dragon-ball-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.wishes-content {
+    text-align: center;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.wishes-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #1976d2;
+    font-family: 'Dancing Script', cursive;
+}
+
+.wishes-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #424242;
+}
+
+/* Qualities Section */
+.qualities-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    position: relative;
+}
+
+.qualities-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dragon-ball-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.qualities-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.photo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.main-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-position: center;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease;
+    border: 5px solid #ffd700;
+}
+
+.main-photo:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.left-qualities, .right-qualities {
+    flex: 1;
+    padding: 2rem;
+    position: relative;
+}
+
+.quality-text {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #1976d2;
+    font-weight: 600;
+}
+
+.quality-text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Story Section */
+.story-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    position: relative;
+}
+
+.story-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dragon-ball-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.date-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.story-content {
+    max-width: 1200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #2e7d32;
+    font-family: 'Dancing Script', cursive;
+}
+
+.story-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #424242;
+    text-align: justify;
+}
+
+/* Proposal Section */
+/* .proposal-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    position: relative;
+}
+
+.proposal-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dragon-ball-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.proposal-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #7b1fa2;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-photo {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.proposal-image {
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 5px solid #7b1fa2;
+}
+
+.proposal-message {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-message p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #424242;
+} */
+.proposal-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  }
+  
+  .proposal-flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px;
+    width: 100%;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* For responsiveness */
+  }
+  
+  .proposal-photo {
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .proposal-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display:block;
+    border-radius: 20px;
+    border: 5px solid #7b1fa2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .proposal-message {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #424242;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  /* style.css*/
+h1 {
+    color: green;
+}
+
+h3 {
+    color: blue;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.mybox1 {
+    display: none; /* This controls the initial hidden state */
+}
+.mybox2 {
+    display: none;
+        font-size: 1rem;
+        color: #2c3e50;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        border-radius: 5px;
+  }
+
+button {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(5, 14, 5);
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(215, 182, 206);
+    margin-top: 20px;
+    cursor: pointer; /* Recommended for buttons */
+}
+
+.story-button{
+ display: block;
+        margin: 1.5rem auto 0 auto;
+        padding: 0.6rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        background-color: #16a085;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 6px 12px rgba(22,160,133,0.3);
+        transition: background-color 0.25s ease, box-shadow 0.25s ease;
+        user-select: none;
+        text-align: center;
+         position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+ #span2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+div,
+span {
+    font-size: 20px;
+}
+
+.story-section .story-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Future Section */
+.future-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    position: relative;
+}
+
+.future-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dragon-ball-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.future-section h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00796b;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.future-content {
+    max-width: 800px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.future-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #424242;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+    
+    .qualities-container {
+        flex-direction: column;
+    }
+    
+    .main-photo {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .date-display {
+        font-size: 2.5rem;
+    }
+    
+    .proposal-title {
+        font-size: 2.5rem;
+    }
+    
+    /* .proposal-image {
+        max-width: 100%;
+    } */
+    
+    .wishes-content, .story-content, .proposal-message, .future-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .dragon-ball {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .dragon-ball::before {
+        width: 15px;
+        height: 15px;
+        top: 7.5px;
+        left: 7.5px;
+    }
+    
+    .power-up {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Dragon Ball Z Themed Elements */
+.dragon-ball-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.dragon-ball {
+    width: 50px;
+    height: 50px;
+    background: #ffd700;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: float 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ff0000;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.dragon-ball::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.dragon-ball::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    top: 20px;
+    left: 0;
+}
+
+.dragon-ball:nth-child(1) { animation-delay: 0s; }
+.dragon-ball:nth-child(2) { animation-delay: 0.5s; }
+.dragon-ball:nth-child(3) { animation-delay: 1s; }
+.dragon-ball:nth-child(4) { animation-delay: 1.5s; }
+.dragon-ball:nth-child(5) { animation-delay: 2s; }
+.dragon-ball:nth-child(6) { animation-delay: 2.5s; }
+.dragon-ball:nth-child(7) { animation-delay: 3s; }
+
+.power-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+}
+
+.aura {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(255,215,0,0) 70%);
+    animation: pulse 2s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+.power-level {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffd700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #ffd700;
+    animation: blink 1s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Birthday Button and Animation */
+.birthday-button {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+}
+
+.birthday-button:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 20px rgb(97, 86, 86);
+}
+
+.birthday-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cake-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.cake {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 2s ease-in-out infinite;
+}
+
+.avatars-container {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.avatar {
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.boy-avatar {
+    width: 120px;
+    animation: dance 1s infinite;
+}
+
+.girl-avatar {
+    width: 100px;
+    animation: dance 1s infinite 0.5s;
+}
+
+.party-poppers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.party-popper {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: pop 1s ease-out forwards;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff0000;
+    animation: float-up 3s ease-out forwards;
+}
+
+.love-message {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #ff6b6b;
+    font-family: 'Dancing Script', cursive;
+    opacity: 0;
+    animation: type 2s forwards;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* New Animations */
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes type {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Update hearts styling */
+.hearts-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 24px;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.heart:hover {
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+/* Update birthday animation */
+.birthday-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cake-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.cake {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 2s ease-in-out infinite;
+}
+
+.avatars-container {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.avatar {
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.boy-avatar {
+    width: 150px;
+    animation: dance 1s infinite;
+}
+
+.girl-avatar {
+    width: 130px;
+    animation: dance 1s infinite 0.5s;
+}
+
+.party-poppers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.party-popper {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: pop 1s ease-out forwards;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff0000;
+    animation: float-up 3s ease-out forwards;
+}
+
+.love-message {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #ff6b6b;
+    font-family: 'Dancing Script', cursive;
+    opacity: 0;
+    animation: type 2s forwards;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* New Animations */
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes type {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Update existing animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .heart {
+        font-size: 20px;
+    }
+    
+    .cake-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cake {
+        width: 200px;
+    }
+    
+    .boy-avatar {
+        width: 100px;
+    }
+    
+    .girl-avatar {
+        width: 80px;
+    }
+    
+    .love-message {
+        font-size: 2.5rem;
+    }
+} 
+
+
+
